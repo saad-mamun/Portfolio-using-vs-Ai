@@ -1,0 +1,86 @@
+.text-link,
+.header-contact,
+.service-item,
+.social-links a,
+.project-card__arrow {
+  transition: color 180ms ease, opacity 180ms ease;
+}
+
+.text-link:hover,
+.service-item:hover .service-item__number,
+.social-links a:hover,
+.project-card__link:hover .project-card__arrow {
+  color: var(--color-violet);
+}
+
+.button,
+.contact__email {
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.button--light:hover {
+  border-color: rgba(255, 255, 255, 0.55);
+  color: var(--color-text);
+  background: transparent;
+}
+
+.reveal-word {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.custom-cursor {
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  width: 2.35rem;
+  height: 2.35rem;
+  border: 1px solid rgba(215, 220, 255, 0.82);
+  border-radius: 50%;
+  background: rgba(132, 153, 255, 0.08);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform, opacity;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.custom-cursor::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.22rem;
+  height: 0.22rem;
+  border-radius: 50%;
+  background: #dfe7ff;
+  content: '';
+  transform: translate(-50%, -50%);
+}
+
+.custom-cursor.is-active {
+  border-color: rgba(168, 133, 255, 0.95);
+  background: rgba(168, 133, 255, 0.18);
+}
+
+body.has-custom-cursor,
+body.has-custom-cursor a,
+body.has-custom-cursor button {
+  cursor: none;
+}
+
+body.has-custom-cursor input,
+body.has-custom-cursor textarea {
+  cursor: text;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
