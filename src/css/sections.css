@@ -95,11 +95,91 @@
 }
 
 .hero__portrait {
+  --portrait-radius: 1.4rem;
   position: relative;
   width: 100%;
   max-width: 430px;
   justify-self: end;
   margin: 0;
+}
+
+.hero__portrait-visual {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(195, 202, 255, 0.22);
+  border-radius: var(--portrait-radius);
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.15), rgba(17, 24, 39, 0.4));
+  box-shadow:
+    0 26px 60px rgba(8, 14, 25, 0.5),
+    0 0 38px rgba(83, 143, 255, 0.18);
+}
+
+.hero__portrait-visual::before {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(130, 173, 255, 0.18), transparent 38%, rgba(77, 105, 163, 0.2));
+  content: '';
+}
+
+.hero__portrait > img,
+.hero__portrait-visual img,
+.hero__portrait-reflection img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 0.78;
+  object-fit: cover;
+}
+
+.hero__portrait-visual img {
+  border-radius: var(--portrait-radius);
+}
+
+.hero__portrait-reflection {
+  position: relative;
+  width: 100%;
+  margin-top: -0.2rem;
+  overflow: hidden;
+  border-radius: var(--portrait-radius);
+  opacity: 0.42;
+  transform: scaleY(-1);
+  filter: blur(2.5px) brightness(0.8) saturate(0.66);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.35) 45%, transparent 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.35) 45%, transparent 100%);
+}
+
+.hero__portrait-water {
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  bottom: 0.2rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(106, 196, 255, 0.5), rgba(29, 77, 126, 0.25) 38%, rgba(11, 19, 32, 0) 72%);
+  filter: blur(14px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.hero__portrait-water::before,
+.hero__portrait-water::after {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  height: 0.8rem;
+  border-radius: 999px;
+  content: '';
+}
+
+.hero__portrait-water::before {
+  top: 0.65rem;
+  background: linear-gradient(90deg, transparent, rgba(160, 228, 255, 0.95), transparent);
+  box-shadow: 0 0 18px rgba(146, 224, 255, 0.75);
+}
+
+.hero__portrait-water::after {
+  bottom: 0.6rem;
+  background: linear-gradient(90deg, rgba(110, 171, 255, 0.6), rgba(173, 253, 255, 0.12), rgba(110, 171, 255, 0.6));
+  opacity: 0.7;
 }
 
 .hero__portrait-art {
@@ -113,14 +193,6 @@
     radial-gradient(ellipse at 50% 36%, rgba(112, 167, 255, 0.32), transparent 37%),
     radial-gradient(ellipse at 56% 78%, rgba(168, 133, 255, 0.24), transparent 45%),
     linear-gradient(145deg, #121c33, #0d1222 62%, #17132b);
-}
-
-.hero__portrait > img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 0.78;
-  border: 1px solid rgba(195, 202, 255, 0.2);
-  object-fit: cover;
 }
 
 .hero__portrait-art::before,

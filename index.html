@@ -43,7 +43,7 @@
         Let’s talk <span aria-hidden="true">↗</span>
       </a>
     </header>
-
+<!-- // home -->
     <main class="site-main">
       <section id="hero" class="hero section-shell" aria-labelledby="hero-title">
         <div class="hero__layout">
@@ -57,18 +57,24 @@
             </div>
           </div>
           <figure class="hero__portrait" aria-labelledby="portrait-caption">
-            <img
-              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80"
-              alt="Portrait of Liton Ali"
-              loading="eager"
-            />
+            <div class="hero__portrait-visual">
+              <img
+                src="./src/assets/profile_photo.png"
+                alt="Portrait of Liton Ali"
+                loading="eager"
+              />
+            </div>
+            <div class="hero__portrait-reflection" aria-hidden="true">
+              <img src="./src/assets/profile_photo.png" alt="" />
+            </div>
+            <div class="hero__portrait-water" aria-hidden="true"></div>
             <figcaption id="portrait-caption">Portrait of Liton Ali.</figcaption>
           </figure>
         </div>
         <p class="scroll-cue"><span aria-hidden="true">↓</span> Scroll to explore</p>
         <span class="hero__index" aria-hidden="true">01 / 06</span>
       </section>
-
+<!-- // about -->
       <section id="about" class="content-section section-shell" aria-labelledby="about-title">
         <div class="section-heading">
           <p class="eyebrow">01 — A little about me</p>
