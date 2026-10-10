@@ -38,6 +38,7 @@
         <a href="#skills">Expertise</a>
         <a href="#projects">Work</a>
         <a href="#services">Services</a>
+        <a href="#ask">Ask AI</a>
       </nav>
       <a class="header-contact" href="#contact">
         Let’s talk <span aria-hidden="true">↗</span>
@@ -75,6 +76,35 @@
         <span class="hero__index" aria-hidden="true">01 / 06</span>
       </section>
 <!-- // about -->
+      <section id="ask" class="answer-section section-shell" aria-labelledby="answer-title">
+        <div class="answer-section__intro">
+          <p class="eyebrow">Curious about something?</p>
+          <h2 id="answer-title">Ask a question.<br /><span>Get a researched answer.</span></h2>
+          <p>Search the web and get a clear answer, with sources to explore further.</p>
+        </div>
+        <form id="answer-form" class="answer-form">
+          <label class="visually-hidden" for="answer-question">What would you like to know?</label>
+          <input
+            id="answer-question"
+            name="question"
+            type="search"
+            maxlength="1000"
+            placeholder="Ask anything..."
+            autocomplete="off"
+            required
+          />
+          <button class="button button--light" type="submit">
+            <span class="answer-form__button-label">Search</span>
+            <span aria-hidden="true">↗</span>
+          </button>
+        </form>
+        <div id="answer-output" class="answer-output" aria-live="polite" hidden>
+          <p id="answer-status" class="answer-output__status" role="status"></p>
+          <div id="answer-content" class="answer-output__content"></div>
+          <ul id="answer-sources" class="answer-output__sources" aria-label="Sources" hidden></ul>
+        </div>
+      </section>
+
       <section id="about" class="content-section section-shell" aria-labelledby="about-title">
         <div class="section-heading">
           <p class="eyebrow">01 — A little about me</p>
